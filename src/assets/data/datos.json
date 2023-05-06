@@ -1,0 +1,216 @@
+[
+  {
+    "image": "./assets/img/barInstitut.jpg",
+    "product": "Bar L'Institut",
+    "price": 20,
+    "fav": true,
+    "currency": "€",
+    "rating":4.7,
+    "description": "Mediterránea Española Opciones vegetarianas",
+    "address": "Calle Primero de Mayo 61, 46190 Riba-roja de Túria España",
+    "schedule": "L-V 07:00-20:00 Sáb 08:00-12:30H ",
+    "lat":39.54278468373005,
+    "lng":-0.5665005312953497,
+    "similarProducts": [
+      {
+        "image": "./assets/img/kiokoLaPergola.jpg",
+        "product": "Kiosko La Pérgola",
+        "price": 30,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.4,
+        "description": "Terraza al aire libre de un quiosco situado en un parque apacible que sirve bocadillos, ensaladas y entrantes"
+      },
+      {
+        "image": "./assets/img/barLasPalmeras.jpg",
+        "product": "Bar Las Palmeras",
+        "price": 8,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.8,
+        "description": "Bar pequeño y no llamativo, pero tiene bocadillos muy originales."
+      },
+      {
+        "image": "./assets/img/laCooperativa.jpg",
+        "product": "La Cooperativa Restaurante",
+        "price": 10,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.5,
+        "description": "Situado en el céntrico barrio de Patraix, rodeado de los lugares de interés en Valencia, se encuentra el Restaurante La Cooperativa, un lugar donde organizar todo tipo de celebraciones disfrutando de una cocina mediterránea de calidad en la popular calle archiduque Carlos."
+      }
+    ],
+    "reviews": [
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pepe_2018.jpg/320px-Pepe_2018.jpg",
+        "name": "Pepe",
+        "rating": 5,
+        "opinion": "Me ha gustado",
+        "date": "10:30 10-06-2022"
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4XhoZ6BdgHuwHjx_YqUiDwS9MQbJo-CGSvg&usqp=CAU",
+        "name": "Marge Simpson",
+        "rating": 2.5,
+        "opinion": "No me ha gustado",
+        "date": "10-05-2022 10:30"
+      }
+    ]
+  },
+  {
+    "image": "./assets/img/kiokoLaPergola.jpg",
+    "product": "Kiosko La Pérgola",
+    "price": 30,
+    "fav": false,
+    "currency": "€",
+    "rating": 3.4,
+    "description": "Terraza al aire libre de un quiosco situado en un parque apacible que sirve bocadillos, ensaladas y entrantes",
+    "address": "Pg. de l'Albereda, 1, 46010 València, Valencia",
+    "schedule": "L-Sáb 07:00-16:30",
+    "lat":39.47708988347105, 
+    "lng":-0.3666362116412788,
+    "similarProducts": [
+      {
+        "image": "./assets/img/barLasPalmeras.jpg",
+        "product": "Bar Las Palmeras",
+        "price": 8,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.8,
+        "description": "Bar pequeño y no llamativo, pero tiene bocadillos muy originales."
+      },
+      {
+        "image": "./assets/img/laCooperativa.jpg",
+        "product": "La Cooperativa Restaurante",
+        "price": 10,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.5,
+        "description": "Situado en el céntrico barrio de Patraix, rodeado de los lugares de interés en Valencia, se encuentra el Restaurante La Cooperativa, un lugar donde organizar todo tipo de celebraciones disfrutando de una cocina mediterránea de calidad en la popular calle archiduque Carlos."
+      },
+      {
+        "image": "./assets/img/barInstitut.jpg",
+    "product": "Bar L'Institut",
+    "price": 20,
+    "fav": true,
+    "currency": "€",
+    "rating":4.7,
+    "description": "Mediterránea Española Opciones vegetarianas"
+      }
+    ],
+    "reviews": [
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Mariano_Rajoy_in_2018.jpg",
+        "name": "Rajoy",
+        "rating": 5,
+        "opinion": "Somos sentimientos y tenemos seres humanos",
+        "date": "10-05-2022 10:30"
+      },
+      {
+        "image": "https://www.realmadrid.com/img/vertical_380px/cristiano_550x650_20180917025046.jpg",
+        "name": "CR7",
+        "rating": 4,
+        "opinion": "Suuuuuuuuuuuu",
+        "date": "10-05-2022 10:30"
+      }
+    ]
+  },
+  {
+    "image": "./assets/img/barLasPalmeras.jpg",
+    "product": "Bar Las Palmeras",
+    "price": 8,
+    "fav": false,
+    "currency": "€",
+    "rating": 3.8,
+    "description": "Bar pequeño y no llamativo, pero tiene bocadillos muy originales.",
+    "address": "C. de l'Antiga Senda d'En Senent, 10, 46023 València, Valencia",
+    "schedule": "L-Sáb 07:00-00:30",
+    "lat":39.4656190635719, 
+    "lng":-0.3586163641696995,
+    "similarProducts": [
+      {
+        "image": "./assets/img/barInstitut.jpg",
+        "product": "Bar L'Institut",
+        "price": 20,
+        "fav": true,
+        "currency": "€",
+        "rating":4.7,
+        "description": "Mediterránea Española Opciones vegetarianas"
+      },
+      {
+        "image": "./assets/img/laCooperativa.jpg",
+        "product": "La Cooperativa Restaurante",
+        "price": 10,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.5,
+        "description": "Situado en el céntrico barrio de Patraix, rodeado de los lugares de interés en Valencia, se encuentra el Restaurante La Cooperativa, un lugar donde organizar todo tipo de celebraciones disfrutando de una cocina mediterránea de calidad en la popular calle archiduque Carlos."
+      }
+    ],
+    "reviews": [
+      {
+        "image": "data:image/jpeg;base64,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",
+        "name": "Ash Ketchum",
+        "rating": 4.6,
+        "opinion": "Me ha gustado mucho",
+        "date": "10-05-2022 10:30"
+      },
+      {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/John_Cena_July_2018.jpg/1200px-John_Cena_July_2018.jpg",
+        "name": "Jhon Cena",
+        "rating": 4.8,
+        "opinion": "Wooooooooooooooooooooow",
+        "date": "10-05-2022 10:30"
+      }
+    ]
+  },
+  {
+    "image": "./assets/img/laCooperativa.jpg",
+    "product": "La Cooperativa Restaurante",
+    "price": 10,
+    "fav": false,
+    "currency": "€",
+    "rating": 3.5,
+    "description": "Situado en el céntrico barrio de Patraix, rodeado de los lugares de interés en Valencia, se encuentra el Restaurante La Cooperativa, un lugar donde organizar todo tipo de celebraciones disfrutando de una cocina mediterránea de calidad en la popular calle archiduque Carlos.",
+    "address": "C. de l'Arxiduc Carles, 14, 46018 València, Valencia",
+    "schedule": "M-Dom 09:00-16:00",
+    "lat":39.465629, 
+    "lng":-0.393594,
+    "similarProducts": [
+      {
+        "image": "./assets/img/barInstitut.jpg",
+        "product": "Bar L'Institut",
+        "price": 20,
+        "fav": true,
+        "currency": "€",
+        "rating":4.7,
+        "description": "Mediterránea Española Opciones vegetarianas"
+      },
+      {
+        "image": "./assets/img/kiokoLaPergola.jpg",
+        "product": "Kiosko La Pérgola",
+        "price": 30,
+        "fav": false,
+        "currency": "€",
+        "rating": 3.4,
+        "description": "Terraza al aire libre de un quiosco situado en un parque apacible que sirve bocadillos, ensaladas y entrantes"
+      }
+    ],
+    "reviews": [
+      {
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/01/hipertextual-es-figura-baby-yoda-mas-real-que-podras-comprar-2020062519.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
+        "name": "Baby Yoda",
+        "rating": 3.4,
+        "opinion": "asdasdasdadasdasdasdasd",
+        "date": "10-05-2022 10:30"
+      },
+      {
+        "image": "https://i.pinimg.com/originals/c6/9f/53/c69f5331531ca83975f47a6ee688ef56.jpg",
+        "name": "Gerald de rivia",
+        "rating": 4.2,
+        "opinion": "Keeeeeee",
+        "date": "10-05-2022 10:30"
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+.img {
+  height: 100%;
+  width: 100%;
+  margin-left: -10px;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-size: x-large;
+}
+
+.stars-outer::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: x-large;
+}
+
+.stars-inner::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+}
+.mapa{
+  height: 400;
+  width: 600;
+}

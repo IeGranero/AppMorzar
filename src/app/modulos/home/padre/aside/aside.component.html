@@ -1,0 +1,55 @@
+<!---Aside-->
+<!---Filtros-->
+<select
+  [(ngModel)]="estrella"
+  (change)="FiltraEstrellas(estrella)"
+  class="form-control"
+  
+  [ngStyle]="{
+    'background-color': estrella === 0 ? 'white' : '#B0C4DE'
+  }"
+>
+  <option value="1">⭐</option>
+  <option value="2">⭐⭐</option>
+  <option value="3">⭐⭐⭐</option>
+  <option value="4">⭐⭐⭐⭐</option>
+  <option value="5">⭐⭐⭐⭐⭐</option>
+</select>
+<br />
+<input
+  type="text"
+  [(ngModel)]="filtro"
+  class="form-control form-control"
+  placeholder="Buscar Sitio"
+  [ngStyle]="{
+    'background-color': filtro === '' ? 'white' : '#B0C4DE'
+  }"
+/>
+<br />
+<button type="button" class="btn btn-secondary" (click)="FiltraPeli(filtro)">
+  Buscar
+</button>
+&nbsp;
+<button type="button" class="btn btn-secondary" (click)="Reset()">
+  Reiniciar
+</button>
+<br /><br />
+<!---Lista-->
+<b>Mis Sitios</b><bR />
+<ul class="list-unstyled text-center">
+  <div *ngFor="let dato of datosFiltrado">
+    <li class="mb-1">
+      <a>
+      <button
+        class="btn btn-toggle"
+        (click)="Selecciona(dato.price)"
+        [ngStyle]="{
+          color: datosElegido?.product === dato.product ? 'blue' : 'black'
+        }"
+      >
+        {{ dato.product }} &nbsp; &nbsp; &nbsp;&#10095;
+      </button></a>
+    </li>
+    <hr />
+  </div>
+</ul>

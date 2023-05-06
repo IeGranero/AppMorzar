@@ -1,0 +1,21 @@
+ul {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 0.5em 0;
+      a {
+       
+        text-decoration: none;
+        width: 100%;
+        color: black;
+        font-size: 18px;
+       
+        span {
+          margin-left: auto;
+          font-size: 18px;
+       
+        }
+      }
+    }
+  }
+  

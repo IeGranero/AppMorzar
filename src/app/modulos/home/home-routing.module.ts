@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { PadreComponent } from './padre/padre.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+const routes: Routes = [
+  {
+    path: '',
+    component: PadreComponent
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule,GoogleMapsModule]
+})
+export class HomeRoutingModule { }

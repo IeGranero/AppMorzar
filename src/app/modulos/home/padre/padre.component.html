@@ -1,0 +1,26 @@
+<div class="container-fluid main">
+  <div class="row">
+    <div class="p-3 bg-white d-flex flex-column col-md-3 border border-dark">
+      <app-aside
+        [datos]="datos"
+        [datosElegido]="datoElegido"
+        [datosFiltrado]="datoFiltrado"
+        [filtro]="filtro"
+        [estrella]="estrella"
+        (Seleccionado)="Selecciona($event)"
+        (FiltradoEstrella)="FiltraEstrellas($event)"
+        (Filtrado)="FiltraPeli($event)"
+        (Reseteado)="Reset()"
+      ></app-aside>
+    </div>
+    <div class="d-flex col-md-9">
+      <app-main
+        [datoElegido]="datoElegido"
+        (EliminarPeli)="EliminaPeli()"
+        (Favoritosemit)="Favoritos()"
+        (AnyadeCarro)="AnyadirCarro()"
+      ></app-main>
+      
+    </div>
+  </div>
+</div>
