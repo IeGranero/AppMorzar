@@ -39,13 +39,15 @@ export class DatosService implements OnInit{
   }
 
   guardarSitios(datos:producto[]){
-    this.httpClient.put(' https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json',datos).subscribe(
+    const token=this.loginService.getIdToken();
+    this.httpClient.put(` https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json?auth=${token}`,datos).subscribe(
       response =>console.log("se han guardado los datos"+response),
       error=>console.log("error no se ha guardado nada"+error)
     );
   }
   eliminarSitio(indice:number){
-    const url=' https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos/'+indice+'.json';
+    const token=this.loginService.getIdToken();
+    const url=` https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json?auth=${token}`+indice+'.json';
     this.httpClient.delete(url).subscribe(
       response =>console.log("se han eliminado los datos"+response),
       error=>console.log("error no se ha eliminado"+error)

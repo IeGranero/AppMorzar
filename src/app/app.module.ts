@@ -21,6 +21,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { actualizarModule } from './modulos/ActualizaComponent/actualizar.module';
 import { LoginModule } from './modulos/login/login.module';
 import { LoginService } from './servicios/loging.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { LoginService } from './servicios/loging.service';
     LoginModule,
  
   ],
-  providers: [
+  providers: [CookieService
   
   ],
   bootstrap: [AppComponent],
