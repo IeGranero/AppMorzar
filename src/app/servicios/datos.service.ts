@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { producto } from '../interfaces/producto.interface';
 import { BehaviorSubject } from 'rxjs';
 import { LoginService } from './loging.service';
@@ -7,29 +7,37 @@ import { LoginService } from './loging.service';
 @Injectable({
   providedIn: 'root',
 })
-export class DatosService {
+export class DatosService implements OnInit{
+  datosService: any;
   constructor(private http: HttpClient, private httpClient:HttpClient, private loginService:LoginService) {}
+  ngOnInit(): void {
+
+  }
 
   $datos: BehaviorSubject<producto[]> = new BehaviorSubject<producto[]>([]);
 
   setdatos(newdatos: producto[]) {
     this.$datos.next(newdatos);
+  
   }
 
   getDataProduct() {
-   // const url = '/assets/data/datos.json';
+  //  const url = '/assets/data/datos.json';
    const token=this.loginService.getIdToken();
-   const url = ' https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json?auth='+ token;
+   console.log(token+"este es el token que pongo")
+   const url = ` https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json?auth=${token}`;
      this.http.get<producto[]>(url).subscribe({
      next: (response) => {
        if (!response) return;
        this.$datos.next(response);
-       
+   
+
+
       },
    });
 
   }
-  
+
   guardarSitios(datos:producto[]){
     this.httpClient.put(' https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json',datos).subscribe(
       response =>console.log("se han guardado los datos"+response),

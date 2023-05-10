@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PermisosGuard } from './permisos.guard';
 import { LoginService } from './servicios/loging.service';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -15,10 +14,9 @@ const routes: Routes = [
       import('./modulos/contact/contact.module').then((module) => module.ContactModule),
   },
   {
-    path: 'guard',
+    path: 'amigos',
     loadChildren: () =>
-      import('./guard/guard.module').then((module) => module.GuardModule),
-      canActivate: [PermisosGuard]
+      import('./modulos/amigos/amigos.module').then((module) => module.amigosModule),
   },
   {
     path: 'home',

@@ -18,6 +18,7 @@ export class PadreComponent implements OnInit {
   constructor(public datosService: DatosService, public carroService: CarroService) {}
 
   ngOnInit(): void {
+    this.datosService.getDataProduct();
     this.datosService.$datos.subscribe({
       next: (response) => {
         this.datos = response;
