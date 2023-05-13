@@ -58,7 +58,7 @@
       <br /><br />
       <hr/>
       <!-- <button type="button" class="btn btn-info mt-2" (click)="AnyadirCarro()"[routerLink]="['/carro',datoElegido.product]"> -->
-       <button type="button" class="btn btn-info mt-2" (click)="AnyadirCarro()" [routerLink]="['/actualiza',datoElegido.product]">
+       <button type="button" class="btn btn-info mt-2" (click)="AnyadirCarro()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         modificar 
       </button>
       &nbsp;
@@ -111,7 +111,187 @@
 
         </map-marker>
       </google-map>
+      <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" [ngStyle]="{
+        'background-color': datoElegido.fav === true ? '#1E6BA2' : '#F0F8FF ',
+        color: datoElegido.fav === true ? 'white' : 'black'
+      }">
+        <h5 class="modal-title" id="staticBackdropLabel">Sitio a Modificar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [ngStyle]="{
+        'background-color': datoElegido.fav === true ? '#1E6BA2' : '#F0F8FF ',
+        color: datoElegido.fav === true ? 'white' : 'black'
+      }">
+         <div class="">
+            <form  [formGroup]="userForm" autocomplete="off">
+              <div class="row">
+                <div class="">
+                  <div class="form-group mb-3 d-flex justify-content-between col-md-12">
+                    
+                    <label for="Nombre">
+                      Nombre del lugar
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="{{ datoElegido.product }}"
+                        [(ngModel)]="datoElegido.product"
+                        formControlName="product"
+                      />
+                      <small *ngIf="validarCampo('product')" class="form-text text-danger"
+                        >El nombre de ser mayor que 4 carácteres</small
+                      >
+                    </label>
+                    <label for="Precio">
+                      Precio aproximado 
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="{{ datoElegido.price }}"
+                        [(ngModel)]="datoElegido.price"
+                        formControlName="price"
+                      />
+                      <small *ngIf="validarCampo('price')" class="form-text text-danger"
+                        >El precio debe ser mayor a 2€</small
+                      >
+                    </label>
+                    <label for="address">
+                      Direccion del lugar
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="{{ datoElegido.address }}"
+                        [(ngModel)]=" datoElegido.address "
+                        formControlName="address"
+                      />
+                      <small *ngIf="validarCampo('address')" class="form-text text-danger"
+                        >la direccion de ser mayor que 4 carácteres</small
+                      >
+                    </label>
+                  
+                  </div>
+                  <div class="form-group mb-3 justify-content-between d-flex col-md-12">
+                    <label for="schedule">
+                      Horario del lugar
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="{{ datoElegido.schedule }}"
+                        [(ngModel)]="datoElegido.schedule"
+                        formControlName="schedule"
+                      />
+                      <small *ngIf="validarCampo('schedule')" class="form-text text-danger"
+                        >El nombre de ser mayor que 4 carácteres</small
+                      >
+                    </label>
+                    
+                    <label for="rating">
+                      Estrellas
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="{{ datoElegido.rating }}"
+                        [(ngModel)]="datoElegido.rating"
+                        formControlName="rating"
+                      />
+                      <small *ngIf="validarCampo('rating')" class="form-text text-danger"
+                        >El precio debe ser mayor a 2€</small
+                      >
+                    </label>
+                    <label for="image">
+                      Img URL
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="{{ datoElegido.image }}"
+                        [(ngModel)]=" datoElegido.image"
+                        formControlName="image"
+                      />
+                      <small *ngIf="validarCampo('image')" class="form-text text-danger"
+                        >la direccion de ser mayor que 4 carácteres</small
+                      >
+                    </label>
+                    
+                  </div>
+                  
+                  <div class="form-group mb-3 d-flex justify-content col-md-12">
+                    <label for="lat" class="container">
+                      Latitud del lugar
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="{{ datoElegido.lat }}"
+                        [(ngModel)]="datoElegido.lat"
+                        formControlName="lat"
+                      />
+                      <small *ngIf="validarCampo('lat')" class="form-text text-danger"
+                        >la latitud no puede estar vacia</small
+                      >
+                    </label>
+                    <label for="lng" class="container">
+                      longitud del lugar
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="{{ datoElegido.lng }}"
+                        [(ngModel)]="datoElegido.lng"
+                        formControlName="lng"
+                      />
+                      <small *ngIf="validarCampo('lng')" class="form-text text-danger"
+                        >la longitud no puede estar vacia</small
+                      >
+                    </label>
+                    
+                  
+                  </div>
+                  <div class="form-group mb-3 col-md-12">
+                    <label
+                      ><input type="checkbox" formControlName="fav" value="true" />Sitio
+                      favorito</label
+                    >
+                  </div>
+                  <div class="form-group mb-3 col-md-12">
+                    <label for="Descripcion">
+                      Descripcion del Sitio
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        placeholder="datoElegido.description"
+                        [(ngModel)]="datoElegido.description"
+                        formControlName="description"
+                        cols="83"
+                        rows="3"
+                      >
+                      </textarea>
+                      <small
+                        *ngIf="validarCampo('description')"
+                        class="form-text text-danger"
+                        >El campo no puede estar vacio</small
+                      >
+                    </label>
+                  </div>
+                 
+               
+                </div>
+              
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary" (click)="ModificarProducto()">Guardar</button>
+      </div>
     </div>
+  </div>
+</div>
+    </div>
+
+
+
     <!---Opiniones-->
     
     <!--<div class="col-md-12 border-top border-dark text-start pt-3 mb-3">

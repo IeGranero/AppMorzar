@@ -54,13 +54,11 @@ export class DatosService implements OnInit{
     );
   }
   actualizarSitio(indice:number,sitio:producto){
-    const url=' https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos/'+indice+'.json';
-    this.httpClient.put(url,sitio).subscribe(
+    
+    const token=this.loginService.getIdToken();
+    this.httpClient.put(` https://appmorzar-90c2a-default-rtdb.europe-west1.firebasedatabase.app/datos.json?auth=${token}`+indice+'.json',sitio).subscribe(
       response =>console.log("se han modificado los datos"+response),
-      error=>console.log("error no se han modificado nada"+error)
+      error=>console.log("error no se ha modificado nada"+error)
     );
-  }
-  actualizarSitios(indice:number,sitio:producto){
-    // let sitioModificado=;
   }
 }

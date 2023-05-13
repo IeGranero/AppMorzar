@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { producto } from 'src/app/interfaces/producto.interface';
 import { CarroService } from 'src/app/servicios/carro.service';
 import { DatosService } from 'src/app/servicios/datos.service';
+
+
 
 @Component({
   selector: 'app-padre',
@@ -14,8 +17,27 @@ export class PadreComponent implements OnInit {
   datoFiltrado = this.datos;
   datoCarro: number[] = [];
   contador: number[] = [];
+ 
   
-  constructor(public datosService: DatosService, public carroService: CarroService) {}
+  userForm: FormGroup = this.formBuilder.group({
+    image: [null, Validators.required],
+    product: [null, [Validators.required, Validators.minLength(4)]],
+    price: [null, [Validators.required, Validators.min(2)]],
+    fav: [false],
+    currency: ["€"],
+    lat: [null],
+    lng:[null],
+    rating: [0],
+    schedule: [null, [Validators.required, Validators.min(2)]],
+    address:[null, [Validators.required, Validators.minLength(4)]],
+     
+    description: [null, [Validators.required]],
+    similarProducts: [[]]
+  });
+
+  formValue: any;
+  
+  constructor(public datosService: DatosService, public carroService: CarroService,private formBuilder: FormBuilder ) {}
 
   ngOnInit(): void {
     this.datosService.getDataProduct();
@@ -94,5 +116,28 @@ export class PadreComponent implements OnInit {
     });
     this.datoCarro.push(index);
     this.carroService.setData(this.datoCarro);
+  }
+  modificarProducto(indice:number, sitio:producto){
+      indice = this.datos.findIndex((prod) => {
+       let sitioModificado=this.datoElegido
+  //  sitioModificado.product=sitio.product
+  //  sitioModificado.address=sitio.address
+  //  sitioModificado.currency=sitio.currency
+  //  sitioModificado.description=sitio.description
+  //  sitioModificado.fav=sitio.fav
+  //  sitioModificado.image=sitio.image
+  //  sitioModificado.lat=sitio.lat
+  //  sitioModificado.lng=sitio.lng
+  //  sitioModificado.price=sitio.price
+  //  sitioModificado.rating=sitio.rating
+  //  sitioModificado.schedule=sitio.schedule
+   this.formValue=this.userForm.value
+   this.datos.push(this.formValue);
+   this.datosService.setdatos(this.datos);
+   this.datosService.actualizarSitio(indice,sitio)
+      
+     });
+   
+   
   }
 }

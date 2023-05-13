@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input,  Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { producto } from 'src/app/interfaces/producto.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,25 @@ import { producto } from 'src/app/interfaces/producto.interface';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  userForm: FormGroup = this.formBuilder.group({
+    image: [null, Validators.required],
+    product: [null, [Validators.required, Validators.minLength(4)]],
+    price: [null, [Validators.required, Validators.min(2)]],
+    fav: [false],
+    currency: ["€"],
+    lat: [null],
+    lng:[null],
+    rating: [0],
+    schedule: [null, [Validators.required, Validators.min(2)]],
+    address:[null, [Validators.required, Validators.minLength(4)]],
+     
+    description: [null, [Validators.required]],
+    similarProducts: [[]]
+  });
+
+  formValue: any;
+  datoModificar:string="";
+ 
   
   contador: number[] = [];
 
@@ -30,8 +50,10 @@ export class MainComponent {
   @Output() EliminarPeli = new EventEmitter<any>();
   @Output() Favoritosemit = new EventEmitter<any>();
   @Output() AnyadeCarro = new EventEmitter<any>();
+  @Output() modificarProducto = new EventEmitter<any>();
+  
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private formBuilder: FormBuilder,private dialog: MatDialog) {}
 
 
   
@@ -46,6 +68,9 @@ export class MainComponent {
   Favoritos() {
     this.Favoritosemit.emit();
   }
+  ModificarProducto() {
+    this.modificarProducto.emit();
+   }
 
   AbrirDialogo(datos: any) {
     this.dialog.open(DialogComponent, {
@@ -58,5 +83,11 @@ export class MainComponent {
       },
     });
   }
-
+  validarCampo(field: string): boolean {
+    return (
+      this.userForm.controls[field].invalid &&
+     this.userForm.controls[field].touched
+   );
+    }
+   
 }

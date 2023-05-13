@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { PadreComponent } from './padre/padre.component';
@@ -21,7 +21,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+
   ],
 })
 export class HomeModule { }

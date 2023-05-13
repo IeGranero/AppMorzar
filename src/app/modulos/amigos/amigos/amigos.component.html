@@ -1,13 +1,80 @@
-<div class="col-md-5">
-  <h1>Sitios Similares</h1>
-  <hr />
-  <div *ngFor="let datosPeli of datos" class="d-flex align-items-center">
-   
-   
-    <div class="ml-auto p-2">{{ datosPeli.product }}</div>
-    <div class="ml-auto p-2">{{ datosPeli.reviews }}</div>
+<section class="section about-section gray-bg" id="about">
+  <div class="container">
+      <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6">
+              <div class="about-text go-to">
+                  <h3 class="dark-color">Perfil Amigo X</h3>
+                  <h6 class="theme-color lead">Última conexión 10/04/2023</h6>
+                  <p>Maecenas vulputate imperdiet velit, in ultrices urna lacinia sit amet. Sed ut porttitor nunc. Nullam consequat feugiat nibh, in blandit neque venenatis ut.</p>
+                  <div class=" about-list">
+                      <div class="col-6">
+                         
+                          <div class="media">
+                              <label>Ciudad/Pais</label>
+                              <p>Valencia</p>
+                          </div>
+                          
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="about-avatar">
+                  <img src="./assets/img/friend1.jpg" title="" alt="">
+              </div>
+          </div>
+      </div>
+      <div class="counter m-3">
+        <div class="container px-2 py-2 " id="featured-3">
+          <h2 class="pb-2 border-bottom">Sitios De Mi Amigo</h2>
+          <div class="row g-2 py-2 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+            
+              <h2>Sitio 1</h2>
+              <p>Sed pellentesque, augue vitae eleifend commodo, risus nisl facilisis felis, a accumsan ipsum tellus id enim.</p>
+              <p>Precio:  20€</p>
+              <p>Tipo comida:   Hamburguesas</p>
+              <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Sitio</a>
+            </div>
+            <div class="feature col">
+            
+              <h2>Sitio 2</h2>
+              <p>Sed pellentesque, augue vitae eleifend commodo, risus nisl facilisis felis, a accumsan ipsum tellus id enim.</p>
+              <p>Precio:  15€</p>
+              <p>Tipo comida:   Indú</p>
+              <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Sitio</a>
+            </div>
+            <div class="feature col">
+            
+              <h2>Sitio 3</h2>
+              <p>Sed pellentesque, augue vitae eleifend commodo, risus nisl facilisis felis, a accumsan ipsum tellus id enim.</p>
+              <p>Precio:  10€</p>
+              <p>Tipo comida:  China</p>
+              <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Sitio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cone-striped" viewBox="0 0 16 16">
+          <path d="m9.97 4.88.953 3.811C10.159 8.878 9.14 9 8 9c-1.14 0-2.158-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12zm-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.275 3.9C6.8 3.965 7.382 4 8 4c.618 0 1.2-.036 1.725-.098zm4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257 2.391.598z"/>
+        </svg></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Lo sentimos este sitio esta en obras
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
+</section>
