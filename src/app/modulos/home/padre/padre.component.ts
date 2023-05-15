@@ -133,7 +133,9 @@ export class PadreComponent implements OnInit {
   //  sitioModificado.schedule=sitio.schedule
    this.formValue=this.userForm.value
    this.datos.push(this.formValue);
-   this.datosService.setdatos(this.datos);
+   console.log(this.datos)
+   console.log(this.datos)
+   this.datosService.setdatos(this.formValue);
    this.datosService.actualizarSitio(indice,sitio)
       
      });
